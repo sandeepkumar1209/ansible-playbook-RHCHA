@@ -1,0 +1,10 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a logical volume of 512M
+    lvol:
+     vg: sandeep
+     lv: test
+     size: 512

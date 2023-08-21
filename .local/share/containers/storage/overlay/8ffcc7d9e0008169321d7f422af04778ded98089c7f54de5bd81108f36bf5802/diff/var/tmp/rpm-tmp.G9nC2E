@@ -1,0 +1,10 @@
+set -x
+pfx=/usr/sbin/iptables
+pfx6=/usr/sbin/ip6tables
+/usr/sbin/update-alternatives --install \
+	$pfx iptables $pfx-legacy 10 \
+	--slave $pfx6 ip6tables $pfx6-legacy \
+	--slave $pfx-restore iptables-restore $pfx-legacy-restore \
+	--slave $pfx-save iptables-save $pfx-legacy-save \
+	--slave $pfx6-restore ip6tables-restore $pfx6-legacy-restore \
+	--slave $pfx6-save ip6tables-save $pfx6-legacy-save

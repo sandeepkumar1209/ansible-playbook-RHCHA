@@ -1,0 +1,2 @@
+set -x
+modprobe fuse > /dev/null 2>&1 || :

@@ -1,0 +1,11 @@
+set -x
+# create dbus user and group
+getent group dbus >/dev/null || groupadd -f -g 81 -r dbus
+if ! getent passwd dbus >/dev/null ; then
+    if ! getent passwd 81 >/dev/null ; then
+      useradd -r -u 81 -g 81 -d '/' -s /sbin/nologin -c "System message bus" dbus
+    else
+      useradd -r -g 81 -d '/' -s /sbin/nologin -c "System message bus" dbus
+    fi
+fi
+exit 0

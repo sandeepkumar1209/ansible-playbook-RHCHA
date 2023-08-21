@@ -1,0 +1,12 @@
+---
+- name: Managing the file permissions using ansible
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Grant user ansible read access to a file
+    acl:
+     path: /etc/redhat-release
+     entity: ansible
+     etype: user
+     permissions: r
+     state: present

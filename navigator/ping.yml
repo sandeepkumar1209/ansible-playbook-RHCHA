@@ -1,0 +1,11 @@
+---
+- name: Ping test for Playbook
+  hosts: dev
+  tasks:
+  - name: Testing Ping
+    ping:
+    register: result
+
+  - name: Print Ping result
+    debug:
+     msg: "{{ result }}"

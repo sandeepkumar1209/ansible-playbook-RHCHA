@@ -1,0 +1,14 @@
+set -x
+
+ 
+if [ $1 -eq 1 ] && [ -x "/usr/lib/systemd/systemd-update-helper" ]; then 
+    # Initial installation 
+    /usr/lib/systemd/systemd-update-helper install-system-units dbus-broker.service || : 
+fi 
+
+
+ 
+if [ $1 -eq 1 ] && [ -x "/usr/lib/systemd/systemd-update-helper" ]; then 
+    # Initial installation 
+    /usr/lib/systemd/systemd-update-helper install-user-units dbus-broker.service || : 
+fi

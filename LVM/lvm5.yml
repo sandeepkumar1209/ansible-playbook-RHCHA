@@ -1,0 +1,11 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a logical volume with special options(Read ahead sector) 
+    lvol:
+     vg: sandeep
+     lv: test3
+     size: 5g
+     opts: -r 16 

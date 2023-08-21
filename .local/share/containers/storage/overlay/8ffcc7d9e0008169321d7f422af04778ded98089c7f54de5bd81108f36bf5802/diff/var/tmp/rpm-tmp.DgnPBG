@@ -1,0 +1,14 @@
+set -x
+
+ 
+if [ $1 -eq 1 ] && [ -x "/usr/lib/systemd/systemd-update-helper" ]; then 
+    # Initial installation 
+    /usr/lib/systemd/systemd-update-helper install-user-units ssh-agent.service || : 
+fi 
+
+
+ 
+if [ $1 -eq 1 ] && [ -x "/usr/lib/systemd/systemd-update-helper" ]; then 
+    # Initial installation 
+    /usr/lib/systemd/systemd-update-helper install-user-units ssh-agent.socket || : 
+fi

@@ -1,0 +1,16 @@
+---
+- name: Yum Repository Management
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Remove repository from a specific file
+    yum_repository:
+     name: epel
+     file: external_repos
+     state: absent
+  - name: Remove repository from a specific file
+    yum_repository:
+     name: rpmforge
+     file: external_repos
+     state: absent
+

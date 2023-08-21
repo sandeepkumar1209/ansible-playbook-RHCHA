@@ -1,0 +1,9 @@
+---
+- name: Managing partitions on the disks
+  hosts: dev
+  become: true
+  tasks:
+  - name: Remove a volume group with name sandeep
+    lvg:
+     vg: sandeep
+     state: absent

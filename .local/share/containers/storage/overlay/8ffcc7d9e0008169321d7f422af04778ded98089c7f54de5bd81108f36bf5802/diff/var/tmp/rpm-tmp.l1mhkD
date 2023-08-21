@@ -1,0 +1,2 @@
+set -x
+/bin/systemctl --system try-restart systemd-binfmt.service &>/dev/null || :

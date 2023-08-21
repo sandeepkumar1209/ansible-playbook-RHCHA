@@ -1,0 +1,10 @@
+---
+- name: Managing the file permissions using ansible
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Touch a file, using symbolic modes to set the permissions(equivalent to 0644)
+    file:
+     path: /etc/linux.conf
+     state: touch
+     mode: u=rw,g=r,o=r

@@ -1,0 +1,10 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a thin pool of 50m
+    lvol:
+     vg: sandeep
+     thinpool: testpool
+     size: 50m

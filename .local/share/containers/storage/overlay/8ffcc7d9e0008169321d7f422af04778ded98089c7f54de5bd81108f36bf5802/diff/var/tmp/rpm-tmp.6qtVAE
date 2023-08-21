@@ -1,0 +1,18 @@
+set -x
+[ $1 -eq 1 ] || exit 0
+# Initial installation
+
+touch /var/lib/rpm-state/systemd-resolved.initial-installation
+
+# Related to https://bugzilla.redhat.com/show_bug.cgi?id=1943263
+if ls /usr/lib/systemd/libsystemd-shared-24[0-8].so &>/dev/null; then
+    echo "Skipping presets for systemd-resolved.service, seems we are upgrading from old systemd."
+    exit 0
+fi
+
+
+ 
+if [ $1 -eq 1 ] && [ -x "/usr/lib/systemd/systemd-update-helper" ]; then 
+    # Initial installation 
+    /usr/lib/systemd/systemd-update-helper install-system-units systemd-resolved.service || : 
+fi

@@ -1,0 +1,6 @@
+set -x
+# This script will automatically apply sysctl rules if files have been
+# installed or updated in /usr/lib/sysctl.d.
+if test -d "/run/systemd/system"; then
+  /usr/lib/systemd/systemd-sysctl || :
+fi

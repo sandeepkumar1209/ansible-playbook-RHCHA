@@ -1,0 +1,4 @@
+set -x
+# This script will automatically invoke journal catalog update if files
+# have been installed or updated in /usr/lib/systemd/catalog.
+journalctl --update-catalog || :

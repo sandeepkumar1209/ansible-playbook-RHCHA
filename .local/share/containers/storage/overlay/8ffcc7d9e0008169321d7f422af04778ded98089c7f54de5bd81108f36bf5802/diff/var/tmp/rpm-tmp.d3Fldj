@@ -1,0 +1,6 @@
+set -x
+if selinuxenabled &>/dev/null; then
+  /usr/lib/systemd/systemd-update-helper user-reload-restart 2>/dev/null || :
+else
+  /usr/lib/systemd/systemd-update-helper user-reload-restart || :
+fi

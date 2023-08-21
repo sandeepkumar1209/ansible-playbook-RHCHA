@@ -1,0 +1,7 @@
+set -x
+# This script will process files installed in /usr/lib/tmpfiles.d to create
+# tmpfiles automatically. The priority is set such that it will run
+# after the sysusers file trigger, but before any other triggers.
+if test -d "/run/systemd/system"; then
+  systemd-tmpfiles --create || :
+fi

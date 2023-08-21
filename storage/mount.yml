@@ -1,0 +1,14 @@
+---
+- name: Managing Storage Using Ansible Playbook
+  hosts: dev
+  become: true
+  tasks:
+  - name: add /var entry into the /etc/fstab
+    mount:
+     path: /var
+     src: UUID=6602bba5-ddc2-4ca9-9ffa-6b09a3a82be7
+     fstype: xfs
+     opts: defaults
+     dump: '1'
+     state: mounted
+     

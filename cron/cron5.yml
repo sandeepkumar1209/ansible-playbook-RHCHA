@@ -1,0 +1,10 @@
+---
+- name: Schedule Future Jobs
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Creates a cron file under /etc/cron.d
+    cron:
+     name: yum autoupdate
+     cron_file: ansible_yum-autoupdate
+     state: absent

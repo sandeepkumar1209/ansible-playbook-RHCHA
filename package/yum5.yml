@@ -1,0 +1,9 @@
+---
+- name: Yum Repository Management
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Upgrade all packages
+    yum:
+     name: '*'
+     state: latest

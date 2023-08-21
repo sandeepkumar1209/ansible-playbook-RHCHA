@@ -1,0 +1,8 @@
+download_url: https://galaxy.ansible.com/download/redhatinsights-insights-1.0.7.tar.gz
+format_version: 1.0.0
+name: insights
+namespace: redhatinsights
+server: https://galaxy.ansible.com/api/
+signatures: []
+version: 1.0.7
+version_url: https://galaxy.ansible.com/api/v2/collections/redhatinsights/insights/versions/1.0.7/

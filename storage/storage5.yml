@@ -1,0 +1,17 @@
+---
+- name: Managing Storage Using Ansible Playbook
+  hosts: dev
+  become: true
+  tasks:
+  - name: Remove partition number 2 created in the previous task
+    parted:
+     device: /dev/xvdf
+     number: 2
+     state: absent
+  - name: Create a new partition with a size of 1GiB at disk's end
+    parted:
+     device: /dev/xvdf
+     number: 3
+     state: present
+     fs_type: ext3
+     part_start: -1GiB 

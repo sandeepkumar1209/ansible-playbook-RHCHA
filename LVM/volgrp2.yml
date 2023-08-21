@@ -1,0 +1,10 @@
+---
+- name: Managing partitions on the disks
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a volume group on the top of /dev/xvdf1 and resize the volume group
+    lvg:
+     vg: ricky
+     pvs: /dev/xvdf1
+     pvresize: true 

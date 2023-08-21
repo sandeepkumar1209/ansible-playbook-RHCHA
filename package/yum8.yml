@@ -1,0 +1,10 @@
+---
+- name: Yum Repository Management
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Installing the nginx rpm from a local file
+    yum:
+     name: /home/ansible/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+     state: present
+     disable_gpg_check: true

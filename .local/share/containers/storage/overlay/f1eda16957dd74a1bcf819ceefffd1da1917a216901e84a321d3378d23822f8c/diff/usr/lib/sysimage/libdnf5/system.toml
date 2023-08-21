@@ -1,0 +1,7 @@
+version = "1.0"
+
+[system]
+rpmdb_cookie = """
+dc81eda1a4d145f1d7d736ce5cf439fa2ce09e199324f3b83628324726cc3dbe\
+"""
+

@@ -1,0 +1,10 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a logical volume the size of all remaining space in the volume group
+    lvol:
+     vg: sandeep
+     lv: nehraclass
+     size: 100%FREE

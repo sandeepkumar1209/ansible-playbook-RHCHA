@@ -1,0 +1,10 @@
+---
+- name: Managing partitions on the disks
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a volume group on the top of /dev/xvdf1 with physical extent size =32MB
+    lvg:
+     vg: sandeep
+     pvs: /dev/xvdf1
+     pesize: 32

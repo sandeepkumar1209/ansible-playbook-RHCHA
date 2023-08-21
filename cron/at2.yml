@@ -1,0 +1,10 @@
+---
+- name: Schedule Future Jobs
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Schedule a command to execute in 3days as root
+    ansible.posix.at:
+     command: uptime > /tmp/uptime.txt
+     count: 3
+     units: days

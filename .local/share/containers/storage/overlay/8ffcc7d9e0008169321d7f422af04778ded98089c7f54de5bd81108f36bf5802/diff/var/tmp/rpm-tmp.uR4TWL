@@ -1,0 +1,5 @@
+set -x
+# This script will process files installed in /usr/lib/sysusers.d to create
+# specified users automatically. The priority is set such that it
+# will run before the tmpfiles file trigger.
+systemd-sysusers || :

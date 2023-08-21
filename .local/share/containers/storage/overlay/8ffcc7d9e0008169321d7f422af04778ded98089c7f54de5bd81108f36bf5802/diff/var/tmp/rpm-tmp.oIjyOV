@@ -1,0 +1,21 @@
+set -x
+# systemd-networkd was split out in systemd-246.6-2.
+# Ideally, we would have a trigger scriptlet to record enablement
+# state when upgrading from systemd <= systemd-246.6-1. But, AFAICS,
+# rpm doesn't allow us to trigger on another package, short of
+# querying the rpm database ourselves, which seems risky. For rpm,
+# systemd and systemd-networkd are completely unrelated.  So let's use
+# a hack to detect if an old systemd version is currently present in
+# the file system.
+# https://bugzilla.redhat.com/show_bug.cgi?id=1943263
+if [ $1 -eq 1 ] && ls /usr/lib/systemd/libsystemd-shared-24[0-6].so &>/dev/null; then
+    echo "Skipping presets for systemd-networkd.service, seems we are upgrading from old systemd."
+else
+    
+ 
+if [ $1 -eq 1 ] && [ -x "/usr/lib/systemd/systemd-update-helper" ]; then 
+    # Initial installation 
+    /usr/lib/systemd/systemd-update-helper install-system-units systemd-networkd.service systemd-networkd-wait-online.service || : 
+fi 
+
+fi

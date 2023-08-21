@@ -1,0 +1,9 @@
+---
+- name: Managing Storage Using Ansible Playbook
+  hosts: dev
+  become: true
+  tasks:
+  - name: Blank filesystem signature on /dev/xvdf1
+    filesystem:
+     dev: /dev/xvdf1
+     state: absent

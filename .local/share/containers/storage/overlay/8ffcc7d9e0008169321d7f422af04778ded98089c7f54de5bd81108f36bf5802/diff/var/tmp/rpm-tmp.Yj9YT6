@@ -1,0 +1,9 @@
+set -x
+# Symlink all rpmdb files to the new location if we're still using /var/lib/rpm
+if [ -d /var/lib/rpm ]; then
+    mkdir -p /usr/lib/sysimage/rpm
+    rpmdb_files=$(find /var/lib/rpm -maxdepth 1 -type f | sed 's|^/var/lib/rpm/||g' | sort)
+    for rpmdb_file in ${rpmdb_files[@]}; do
+        ln -sfr /var/lib/rpm/${rpmdb_file} /usr/lib/sysimage/rpm/${rpmdb_file}
+    done
+fi

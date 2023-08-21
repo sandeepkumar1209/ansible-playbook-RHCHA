@@ -1,0 +1,16 @@
+---
+- name: Deleting users and groups
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Deleting the user Vijay Sharma
+    user:
+     name: vijay
+     state: absent
+
+  - name: Deleting the Group sandeepclasses
+    group:
+     name: sandeepclasses
+     state: absent
+
+

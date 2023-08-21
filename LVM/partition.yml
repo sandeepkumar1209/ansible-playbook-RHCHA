@@ -1,0 +1,11 @@
+---
+- name: Managing partitions on the disks
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a new partition with a size of 1GiB on /dev/xvdf disk
+    parted:
+     device: /dev/xvdf
+     number: 1
+     state: present
+     part_end: 1GiB

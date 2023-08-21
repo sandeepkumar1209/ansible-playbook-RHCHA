@@ -1,0 +1,10 @@
+---
+- name: Managing Storage Using Ansible Playbook
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create an ext2 filesystem on /dev/xvdf1
+    filesystem:
+     fstype: ext2
+     dev: /dev/xvdf1
+     force: true

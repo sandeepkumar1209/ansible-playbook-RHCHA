@@ -1,0 +1,28 @@
+set -x
+# Copy nsswitch.conf to user-nsswitch.conf if it was not yet created
+
+# Keep nss-altfiles for all rpm-ostree based systems.
+# See https://github.com/authselect/authselect/issues/48
+if test -e /run/ostree-booted; then
+    for PROFILE in `ls /usr/share/authselect/default`; do
+        /usr/bin/authselect create-profile $PROFILE --vendor --base-on $PROFILE --symlink-pam --symlink-dconf --symlink=REQUIREMENTS --symlink=README &> /dev/null
+        /usr/bin/sed -ie 's/{if "with-altfiles":altfiles }/altfiles /g' /usr/share/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
+    done
+fi
+
+/usr/bin/authselect check &> /dev/null
+if [ $? -eq 6 ]; then
+    NOBACKUP="--nobackup"
+fi
+
+# If we are upgrading from pre authselect-1.3.0 or this is a new installation
+# select the default configuration.
+if [ -f /var/lib/rpm-state/authselect.force ]; then
+    /usr/bin/authselect select sssd with-silent-lastlog --force $NOBACKUP &> /dev/null
+    /usr/bin/rm -f /var/lib/rpm-state/authselect.force
+fi
+
+# Apply any changes to profiles (validates configuration first internally)
+/usr/bin/authselect apply-changes &> /dev/null
+
+exit 0

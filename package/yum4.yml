@@ -1,0 +1,9 @@
+---
+- name: Yum Repository Management
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Removing a package
+    yum:
+     name: httpd
+     state: absent

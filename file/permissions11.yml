@@ -1,0 +1,20 @@
+---
+- name: Managing the file permissions using ansible
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Create a directory as ansible under /etc/linux
+    file:
+     path: /etc/linux/ansible
+     state: directory
+    register: result
+  - name: Printing the result of the previous task
+    debug:
+     msg: "{{ result }}"
+  - name: Recursively change ownership of the ansible directory
+    file:
+     path: /etc/linux
+     state: directory
+     recurse: yes
+     owner: ansible
+     group: ansible 

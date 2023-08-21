@@ -1,0 +1,2 @@
+set -x
+gio-querymodules-64 /usr/lib64/gio/modules &> /dev/null || :

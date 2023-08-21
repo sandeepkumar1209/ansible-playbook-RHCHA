@@ -1,0 +1,10 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Deactivate a logical volume
+    lvol: 
+     vg: sandeep
+     lv: test
+     active: false

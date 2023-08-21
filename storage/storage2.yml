@@ -1,0 +1,10 @@
+---
+- name: Managing Storage Using Ansible Playbook
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a new ext4 primary partition on /dev/xvdf disk
+    parted:
+     device: /dev/xvdf
+     number: 1
+     state: absent

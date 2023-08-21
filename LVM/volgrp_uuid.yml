@@ -1,0 +1,13 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Reset both volume group and PV UUID
+    lvg:
+     state: inactive
+     vg: ricky
+     pvs: /dev/xvdf1
+     reset_vg_uuid: true
+     reset_pv_uuid: true
+     

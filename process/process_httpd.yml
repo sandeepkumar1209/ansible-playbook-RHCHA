@@ -1,0 +1,20 @@
+---
+- name: Process management using Ansible playbook
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Installing the httpd package on the managed nodes
+    yum:
+     name: httpd
+     state: latest
+  - name: Starting the httpd service on the managed nodes
+    service:
+     name: httpd 
+     state: started
+  - name: Get running process list from remote host
+    ignore_errors: yes
+    shell: "ps -few | grep httpd | awk '{print $2}'"
+    register: running_process
+  - name: Printing the process ID of the running process
+    debug:
+     msg: "{{ running_process.stdout }}"

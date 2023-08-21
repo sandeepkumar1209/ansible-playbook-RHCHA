@@ -1,0 +1,9 @@
+---
+- name: Managing partitions on the disks
+  hosts: dev
+  become: true
+  tasks:
+  - name: Deacitvate the volume group
+    lvg:
+     vg: ricky
+     state: active

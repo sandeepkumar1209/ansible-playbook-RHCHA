@@ -1,0 +1,9 @@
+set -x
+# Due to circular dependencies might not be installed yet, so double check.
+# (systemd -> elfutils-libs -> default-yama-scope -> systemd)
+if [ -x /usr/lib/systemd/systemd-sysctl ] ; then
+
+ 
+[ -x /usr/lib/systemd/systemd-sysctl ] && /usr/lib/systemd/systemd-sysctl 10-default-yama-scope.conf || : 
+
+fi

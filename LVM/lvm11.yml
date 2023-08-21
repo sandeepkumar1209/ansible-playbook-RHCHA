@@ -1,0 +1,11 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Reduce the logical volume by given space
+    lvol: 
+     vg: sandeep
+     lv: test
+     size: -512M
+     force: true

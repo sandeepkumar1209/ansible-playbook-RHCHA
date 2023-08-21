@@ -1,0 +1,11 @@
+---
+- name: Managing the file permissions using ansible
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Removing read access from ansible user to a file
+    acl:
+     path: /etc/redhat-release
+     entity: ansible
+     etype: user
+     state: absent

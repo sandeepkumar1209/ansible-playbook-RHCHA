@@ -1,0 +1,6 @@
+set -x
+# This script will run after any package is initially installed or
+# upgraded. We care about the case where a package is initially
+# installed, because other cases are covered by the *un scriptlets,
+# so sometimes we will reload needlessly.
+/usr/lib/systemd/systemd-update-helper system-reload-restart || :

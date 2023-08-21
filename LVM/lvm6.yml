@@ -1,0 +1,10 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Extend the logical volume to 1024m
+    lvol:
+     vg: sandeep
+     lv: test
+     size: 1024

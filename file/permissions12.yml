@@ -1,0 +1,13 @@
+---
+- name: Managing the file permissions using ansible
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Remove the file
+    file:
+     path: /etc/linux.conf
+     state: absent
+  - name: Recursively remove directory
+    file:
+     path: /etc/linux
+     state: absent

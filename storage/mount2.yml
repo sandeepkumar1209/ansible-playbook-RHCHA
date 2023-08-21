@@ -1,0 +1,10 @@
+---
+- name: Managing Storage Using Ansible Playbook
+  hosts: dev
+  become: true
+  tasks:
+  - name: add /var entry into the /etc/fstab
+    mount:
+     path: /var
+     state: unmounted
+

@@ -1,0 +1,11 @@
+---
+- name: Managing the Volume group
+  hosts: dev
+  become: true
+  tasks:
+  - name: Create a cache pool logical volume
+    lvol:
+     vg: sandeep
+     lv: lvcache
+     size: 512M
+     opts: --type cache-pool

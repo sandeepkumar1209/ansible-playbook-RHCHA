@@ -1,0 +1,17 @@
+---
+- name: Process management using Ansible playbook
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Get running process list from remote host
+    ignore_errors: yes
+    shell: "ps -few | grep infinite | awk '{print $2}'"
+    register: running_process
+  - name: Printing the process ID of the running process
+    debug:
+     msg: "{{ running_process.stdout }}"
+  - name: Kill all the running infinite process
+    ignore_errors: yes
+    shell: "kill {{ item }}" 
+    with_items: "{{ running_process.stdout_lines }}"
+

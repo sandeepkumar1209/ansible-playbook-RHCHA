@@ -1,0 +1,10 @@
+---
+- name: Schedule Future Jobs
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Schedule a command to execute in 1 minutes as root
+    ansible.posix.at:
+     command: lsblk > /tmp/lsblk.txt
+     count: 1
+     units: minutes

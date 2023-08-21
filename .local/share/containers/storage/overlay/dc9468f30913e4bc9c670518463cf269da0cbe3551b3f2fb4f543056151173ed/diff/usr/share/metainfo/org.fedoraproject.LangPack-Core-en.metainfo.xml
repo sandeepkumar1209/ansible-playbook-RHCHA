@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="localization">
+  <id>org.fedoraproject.LangPack-Core-en</id>
+  <name>English</name>
+  <summary>Core Localization support for English</summary>
+  <description><p>
+        Core Meta-package to install default font, glibc locale and input-method if available.
+      </p></description>
+  <metadata_license>CC0-1.0</metadata_license>
+</component>

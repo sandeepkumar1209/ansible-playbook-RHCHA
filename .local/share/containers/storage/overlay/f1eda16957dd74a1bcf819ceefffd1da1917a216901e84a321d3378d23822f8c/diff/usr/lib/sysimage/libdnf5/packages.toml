@@ -1,0 +1,167 @@
+version = "1.0"
+
+[packages]
+"aardvark-dns.x86_64" = {reason="Weak Dependency"}
+"alternatives.x86_64" = {reason="External User"}
+"audit-libs.x86_64" = {reason="External User"}
+"authselect-libs.x86_64" = {reason="Dependency"}
+"authselect.x86_64" = {reason="Dependency"}
+"bash-completion.noarch" = {reason="Weak Dependency"}
+"catatonit.x86_64" = {reason="Dependency"}
+"conmon.x86_64" = {reason="Dependency"}
+"containers-common-extra.noarch" = {reason="Dependency"}
+"containers-common.noarch" = {reason="Dependency"}
+"coreutils-common.x86_64" = {reason="External User"}
+"coreutils.x86_64" = {reason="External User"}
+"cracklib-dicts.x86_64" = {reason="Weak Dependency"}
+"cracklib.x86_64" = {reason="Dependency"}
+"criu-libs.x86_64" = {reason="Weak Dependency"}
+"criu.x86_64" = {reason="Dependency"}
+"crun.x86_64" = {reason="Dependency"}
+"cryptsetup-libs.x86_64" = {reason="Weak Dependency"}
+"curl.x86_64" = {reason="External User"}
+"dbus-broker.x86_64" = {reason="Dependency"}
+"dbus-common.noarch" = {reason="Dependency"}
+"dbus.x86_64" = {reason="Dependency"}
+"device-mapper-libs.x86_64" = {reason="Dependency"}
+"device-mapper.x86_64" = {reason="Dependency"}
+"diffutils.x86_64" = {reason="Weak Dependency"}
+"dnf-data.noarch" = {reason="External User"}
+"dnf5.x86_64" = {reason="External User"}
+"dumb-init.x86_64" = {reason="User"}
+"elfutils-debuginfod-client.x86_64" = {reason="Weak Dependency"}
+"elfutils-default-yama-scope.noarch" = {reason="Dependency"}
+"elfutils-libelf.x86_64" = {reason="Weak Dependency"}
+"elfutils-libs.x86_64" = {reason="Weak Dependency"}
+"expat.x86_64" = {reason="Dependency"}
+"fedora-release-common.noarch" = {reason="External User"}
+"fedora-release-container.noarch" = {reason="External User"}
+"fedora-release-identity-container.noarch" = {reason="External User"}
+"fuse-common.x86_64" = {reason="Dependency"}
+"fuse-overlayfs.x86_64" = {reason="Weak Dependency"}
+"fuse3-libs.x86_64" = {reason="Dependency"}
+"fuse3.x86_64" = {reason="Dependency"}
+"git-core.x86_64" = {reason="User"}
+"glib2.x86_64" = {reason="External User"}
+"glibc-common.x86_64" = {reason="External User"}
+"glibc-gconv-extra.x86_64" = {reason="Weak Dependency"}
+"glibc-langpack-en.x86_64" = {reason="Weak Dependency"}
+"glibc-minimal-langpack.x86_64" = {reason="External User"}
+"glibc.x86_64" = {reason="External User"}
+"gzip.x86_64" = {reason="Dependency"}
+"iptables-legacy-libs.x86_64" = {reason="Dependency"}
+"iptables-legacy.x86_64" = {reason="Dependency"}
+"iptables-libs.x86_64" = {reason="Dependency"}
+"jansson.x86_64" = {reason="Dependency"}
+"json-c.x86_64" = {reason="Dependency"}
+"kmod-libs.x86_64" = {reason="Dependency"}
+"kmod.x86_64" = {reason="Dependency"}
+"less.x86_64" = {reason="Dependency"}
+"libargon2.x86_64" = {reason="Dependency"}
+"libb2.x86_64" = {reason="Dependency"}
+"libbsd.x86_64" = {reason="Dependency"}
+"libcbor.x86_64" = {reason="Dependency"}
+"libcurl.x86_64" = {reason="External User"}
+"libdb.x86_64" = {reason="Dependency"}
+"libdnf5-cli.x86_64" = {reason="External User"}
+"libdnf5.x86_64" = {reason="External User"}
+"libeconf.x86_64" = {reason="Dependency"}
+"libedit.x86_64" = {reason="Dependency"}
+"libfdisk.x86_64" = {reason="Dependency"}
+"libfido2.x86_64" = {reason="Dependency"}
+"libgcc.x86_64" = {reason="External User"}
+"libgcrypt.x86_64" = {reason="External User"}
+"libgomp.x86_64" = {reason="Dependency"}
+"libgpg-error.x86_64" = {reason="External User"}
+"libibverbs.x86_64" = {reason="Dependency"}
+"libmd.x86_64" = {reason="Dependency"}
+"libmnl.x86_64" = {reason="Dependency"}
+"libnet.x86_64" = {reason="Dependency"}
+"libnetfilter_conntrack.x86_64" = {reason="Dependency"}
+"libnfnetlink.x86_64" = {reason="Dependency"}
+"libnftnl.x86_64" = {reason="Dependency"}
+"libnl3.x86_64" = {reason="Dependency"}
+"libnsl2.x86_64" = {reason="Dependency"}
+"libpcap.x86_64" = {reason="Dependency"}
+"libpkgconf.x86_64" = {reason="Dependency"}
+"libpwquality.x86_64" = {reason="Dependency"}
+"libseccomp.x86_64" = {reason="Dependency"}
+"libsemanage.x86_64" = {reason="Dependency"}
+"libslirp.x86_64" = {reason="Dependency"}
+"libsodium.x86_64" = {reason="Dependency"}
+"libstdc++.x86_64" = {reason="External User"}
+"libtirpc.x86_64" = {reason="Dependency"}
+"libutempter.x86_64" = {reason="Dependency"}
+"libxcrypt-compat.x86_64" = {reason="Weak Dependency"}
+"libxkbcommon.x86_64" = {reason="Weak Dependency"}
+"mpdecimal.x86_64" = {reason="Dependency"}
+"ncurses.x86_64" = {reason="User"}
+"netavark.x86_64" = {reason="Dependency"}
+"nftables.x86_64" = {reason="Dependency"}
+"openssh-clients.x86_64" = {reason="Dependency"}
+"openssh.x86_64" = {reason="Dependency"}
+"pam-libs.x86_64" = {reason="Dependency"}
+"pam.x86_64" = {reason="Dependency"}
+"passt.x86_64" = {reason="Weak Dependency"}
+"pkgconf-m4.noarch" = {reason="Dependency"}
+"pkgconf-pkg-config.x86_64" = {reason="Dependency"}
+"pkgconf.x86_64" = {reason="Dependency"}
+"podman-gvproxy.x86_64" = {reason="Weak Dependency"}
+"podman.x86_64" = {reason="User"}
+"protobuf-c.x86_64" = {reason="Dependency"}
+"python-pip-wheel.noarch" = {reason="Dependency"}
+"python-setuptools-wheel.noarch" = {reason="Dependency"}
+"python-unversioned-command.noarch" = {reason="Weak Dependency"}
+"python3-bcrypt.x86_64" = {reason="User"}
+"python3-cffi.x86_64" = {reason="User"}
+"python3-libs.x86_64" = {reason="Dependency"}
+"python3-markupsafe.x86_64" = {reason="User"}
+"python3-pip.noarch" = {reason="User"}
+"python3-ply.noarch" = {reason="Dependency"}
+"python3-pycparser.noarch" = {reason="Dependency"}
+"python3-pynacl.x86_64" = {reason="User"}
+"python3-pyrsistent.x86_64" = {reason="User"}
+"python3-pyyaml.x86_64" = {reason="User"}
+"python3-ruamel-yaml-clib.x86_64" = {reason="Dependency"}
+"python3-ruamel-yaml.noarch" = {reason="User"}
+"python3-setuptools.noarch" = {reason="Weak Dependency"}
+"python3-six.noarch" = {reason="Dependency"}
+"python3-wheel.noarch" = {reason="User"}
+"python3.x86_64" = {reason="User"}
+"qemu-user-static-aarch64.x86_64" = {reason="Dependency"}
+"qemu-user-static-alpha.x86_64" = {reason="Dependency"}
+"qemu-user-static-arm.x86_64" = {reason="Dependency"}
+"qemu-user-static-cris.x86_64" = {reason="Dependency"}
+"qemu-user-static-hexagon.x86_64" = {reason="Dependency"}
+"qemu-user-static-hppa.x86_64" = {reason="Dependency"}
+"qemu-user-static-loongarch64.x86_64" = {reason="Dependency"}
+"qemu-user-static-m68k.x86_64" = {reason="Dependency"}
+"qemu-user-static-microblaze.x86_64" = {reason="Dependency"}
+"qemu-user-static-mips.x86_64" = {reason="Dependency"}
+"qemu-user-static-nios2.x86_64" = {reason="Dependency"}
+"qemu-user-static-or1k.x86_64" = {reason="Dependency"}
+"qemu-user-static-ppc.x86_64" = {reason="Dependency"}
+"qemu-user-static-riscv.x86_64" = {reason="Dependency"}
+"qemu-user-static-s390x.x86_64" = {reason="Dependency"}
+"qemu-user-static-sh4.x86_64" = {reason="Dependency"}
+"qemu-user-static-sparc.x86_64" = {reason="Dependency"}
+"qemu-user-static-x86.x86_64" = {reason="Dependency"}
+"qemu-user-static-xtensa.x86_64" = {reason="Dependency"}
+"qemu-user-static.x86_64" = {reason="Weak Dependency"}
+"qrencode-libs.x86_64" = {reason="Weak Dependency"}
+"rpm-libs.x86_64" = {reason="External User"}
+"rpm-sequoia.x86_64" = {reason="External User"}
+"rpm.x86_64" = {reason="External User"}
+"shadow-utils-subid.x86_64" = {reason="Dependency"}
+"shadow-utils.x86_64" = {reason="Dependency"}
+"slirp4netns.x86_64" = {reason="Weak Dependency"}
+"systemd-libs.x86_64" = {reason="External User"}
+"systemd-networkd.x86_64" = {reason="Weak Dependency"}
+"systemd-pam.x86_64" = {reason="Dependency"}
+"systemd-resolved.x86_64" = {reason="Weak Dependency"}
+"systemd.x86_64" = {reason="Dependency"}
+"tar.x86_64" = {reason="Weak Dependency"}
+"util-linux.x86_64" = {reason="Dependency"}
+"xkeyboard-config.noarch" = {reason="Dependency"}
+"yajl.x86_64" = {reason="Dependency"}
+

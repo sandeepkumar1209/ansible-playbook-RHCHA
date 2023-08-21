@@ -1,0 +1,24 @@
+---
+- name: DHCP Server Configuration Playbook
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Setting up the static hostname in the machine
+    hostname:
+     name: dhcp-server
+     use: systemd
+  - name: Installing DHCP packages in the machine
+    yum:   
+     name: dhcp*
+     state: latest
+  - name: Copying the configuration file into /etc/dhcp directory using jinja template
+    template:
+     src: /home/ansible/dhcp/dhcp.conf.j2
+     dest: /etc/dhcp/dhcpd.conf
+     force: true
+  - name: Starting and Enabling the DHCPD service
+    service: 
+     name: dhcpd
+     state: started
+     enabled: yes
+  

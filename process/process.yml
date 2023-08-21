@@ -1,0 +1,24 @@
+---
+- name: Process management using Ansible playbook
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Copying the infinite loop script to the managed node
+    copy:
+     src: /home/ansible/process/infinite.sh
+     dest: /home/ansible/infinite.sh
+     owner: ansible
+     group: ansible
+     mode: '0755'
+  - name: Start the process by running the script file in the background
+    shell: nohup sh /home/ansible/infinite.sh &
+
+  - name: Get running process list from remote host
+    ignore_errors: yes
+    shell: "ps -few | grep infinite | awk '{print $2}' | head -1"
+    register: running_process
+  - name: Printing the process ID of the running process
+    debug:
+     msg: "{{ running_process.stdout }}"
+  - name: Changing the priority of the infinite process
+    shell: renice +5 "{{ running_process.stdout }}"

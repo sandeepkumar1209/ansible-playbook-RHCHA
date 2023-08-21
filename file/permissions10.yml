@@ -1,0 +1,10 @@
+---
+- name: Managing the file permissions using ansible
+  hosts: dev
+  become: yes
+  tasks:
+  - name: Change the access time of the file
+    file:
+     path: /etc/linux.conf
+     state: file
+     access_time: '202011121015.20'
